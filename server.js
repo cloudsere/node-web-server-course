@@ -2,11 +2,13 @@
 * @Author: heqingqiu
 * @Date:   2018-05-26 21:28:20
 * @Last Modified by:   heqingqiu
-* @Last Modified time: 2018-05-31 11:20:30
+* @Last Modified time: 2018-06-01 22:05:56
 */
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -60,6 +62,6 @@ app.get('/bad',(req,res)=>{
 	})
 })
 
-app.listen(3000,()=>{
-	console.log('Server is up on the port 3000');
+app.listen(port,()=>{
+	console.log(`Server is up on the port ${port}`);
 });

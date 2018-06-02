@@ -2,7 +2,7 @@
 * @Author: heqingqiu
 * @Date:   2018-05-26 21:28:20
 * @Last Modified by:   heqingqiu
-* @Last Modified time: 2018-06-01 22:05:56
+* @Last Modified time: 2018-06-02 11:32:13
 */
 const express = require('express');
 const hbs = require('hbs');
@@ -39,10 +39,6 @@ app.use((req, res, next)=>{
 
 })// register middleware, takes in a function
 
-app.use((req, res, next)=>{
-	res.render('test.hbs');
-})
-
 app.get('/', (req, res)=>{
 	res.render('home.hbs',{
 		pageTitle: 'Home Page',
@@ -59,6 +55,13 @@ app.get('/about',(req, res)=>{
 app.get('/bad',(req,res)=>{
 	res.send({
 		errorMessage:'errorMessage'
+	})
+})
+
+app.get('/portfolio',(req,res)=>{
+	res.render('portfolio.hbs',{
+		pageTitle: 'Portfolio Page',
+		portfolioMessage: 'This is my portfolio'
 	})
 })
 
